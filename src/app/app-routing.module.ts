@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-<<<<<<< HEAD
 import { SubscribePageComponent } from './subscribe-page/subscribe-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
@@ -16,10 +15,6 @@ const routes: Routes = [
   {path:"login",component:LogInPageComponent},
   {path:"dashbord",component:DashbordComponent,canActivate:[AuthGurdService]},
 ];
-=======
-
-const routes: Routes = [];
->>>>>>> 4f824ccd6b0d2f228ee53f9162073ee4b5ec95f2
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
