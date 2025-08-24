@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+<<<<<<< HEAD
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,19 @@ import { DashbordComponent } from './dashbord/dashbord.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule
+=======
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+>>>>>>> 4f824ccd6b0d2f228ee53f9162073ee4b5ec95f2
   ],
   providers: [],
   bootstrap: [AppComponent]
