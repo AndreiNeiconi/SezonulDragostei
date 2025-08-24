@@ -1,0 +1,64 @@
+
+// Footer Section
+.footer-bottom {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 10px 5px;
+    background-color: #e8e8e8;
+    border-top: 2px solid #ddd;
+    font-size: 0.9rem;
+
+    .footer-links,
+    .footer-contact {
+        flex: 1 1 100px;
+
+    }
+
+    .footer-links {
+        a {
+            color: #333;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        p {
+            margin-top: 10px;
+        }
+    }
+
+    .footer-contact {
+        text-align: center;
+
+        a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// Responsive Styling
+@media (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+
+        .footer-contact {
+            text-align: center;
+        }
+    }
+
+    .quote-section .quote-text {
+        font-size: 1rem;
+    }
+}

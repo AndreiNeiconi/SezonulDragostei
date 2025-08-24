@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="container-fluid px-3  main-container">
+    <!-- OBJECTIVE Section -->
+    <div class="row mb-4">
+        <div class="col-12 col-md-1 section-title mb-2 mb-md-3 obj">OBJECTIVE</div>
+        <div class="col">
+            <div class="row row-cols-1 row-cols-md-6 g-3 text-center">
+                <div class="col" *ngFor="let step of steps">
+                    <div class="stage-icon">{{ step.icon }}</div>
+                    <div class="stage-title">{{ step.title }}</div>
+                    <p class="small">{{ step.objective }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TASKS Section -->
+    <!-- <div class="row">
+        <div class="col-12 col-md-1 section-title mb-2 mb-md-0">TASKS</div>
+        <div class="col">
+            <div class="row row-cols-1 row-cols-md-6 g-3 text-start">
+                <div class="col" *ngFor="let step of steps">
+                    <ul class="small ps-3">
+                        <li *ngFor="let task of step.tasks">{{ task }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+<app-footer></app-footer>
