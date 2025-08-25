@@ -9,7 +9,8 @@ export class SubscribeService {
 
   constructor(private http: HttpClient) {}
 
-  SubscribeForm(formData: { name: String; surname: String; email: String; phone: String; sex: String; age: String; job: String; avalabilityDate: String; location: String; photo: String; moreDetali: String; }) {
+  SubscribeForm(formData: FormData) {
     return this.http.post(`${this.baseUrl}/subscribe`, formData);
-  };
+  }
 }
+

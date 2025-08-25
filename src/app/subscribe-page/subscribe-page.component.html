@@ -67,7 +67,8 @@
             <div class="col-md-4">
                 <label for="camp3" class="form-label"><strong>O fotografie cu tine</strong></label>
                 <br>
-                <input type="file" name="" id="">
+                <input type="file" (change)="onFileSelected($event)">
+
             </div>
         </div>
         <div class="row mb-3">
@@ -84,7 +85,7 @@
         </div>
         
         <br>
-        <button type="submit" class="btn btn-primary">Trimite</button>
+        <button type="submit" class="btn btn-primary" >Trimite</button>
         <p *ngIf="succes" style="color: green;">{{succes}}</p>
         <p *ngIf="error" style="color: red;">{{error}}</p>
     </form>

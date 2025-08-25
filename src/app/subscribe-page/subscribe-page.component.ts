@@ -11,31 +11,50 @@ export class SubscribePageComponent {
   surname = '';
   email = '';
   phone = '';
-  sex = ''
+  sex = '';
   age = '';
   job = '';
   avalabilityDate = '';
   location = '';
   photo = '';
   moreDetali = '';
-  succes = ''
-  error = ''
-  constructor(private SubscribeService:SubscribeService){}
-
+  succes = '';
+  selectedFile ='';
+  error = '';
+  constructor(private SubscribeService: SubscribeService) {}
 
   submitForm() {
-    const formData = { name: this.name,surname: this.surname,email: this.email,phone:this.phone,sex:this.sex,age:this.age,job:this.job,avalabilityDate:this.avalabilityDate,location:this.location,photo:this.photo,moreDetali:this.moreDetali };
+    const formData = new FormData();
+
+    formData.append('last_name', this.name);
+    formData.append('first_name', this.surname);
+    formData.append('email', this.email);
+    formData.append('phone', this.phone);
+    formData.append('gender', this.sex);
+    formData.append('age', this.age);
+    formData.append('occupation', this.job);
+    formData.append('available_from', this.avalabilityDate);
+    formData.append('available_to', this.avalabilityDate); // if you want both same
+    formData.append('location', this.location);
+    formData.append('about', this.moreDetali);
+    formData.append('accepted_terms', 'true');
+    formData.append('photo', this.selectedFile); // handled separately
+
     this.SubscribeService.SubscribeForm(formData).subscribe({
       next: (res) => {
         this.succes = 'Message sent!';
         this.error = '';
-        this.name = this.surname= this.email = this.phone= this.sex= this.age=this.job=this.avalabilityDate=this.location=this.photo=this.moreDetali='';
       },
       error: () => {
         this.error = 'Failed to send message.';
         this.succes = '';
-      }
+      },
     });
+  }
+
+  // Capture file input
+  onFileSelected(event: any) {
+    this.selectedFile = event.target.files[0];
   }
 }
 
