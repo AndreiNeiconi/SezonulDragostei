@@ -29,19 +29,19 @@
                 <div class="col-md-4">
                     <div class="card p-3 shadow-sm">
                         <h5>Total Users</h5>
-                        <p class="fs-3">150</p>
+                        <p class="fs-3">3</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card p-3 shadow-sm">
                         <h5>Active Requests</h5>
-                        <p class="fs-3">32</p>
+                        <p class="fs-3">0</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card p-3 shadow-sm">
-                        <h5>Revenue</h5>
-                        <p class="fs-3">$12,300</p>
+                        <h5>Request canceled</h5>
+                        <p class="fs-3">0</p>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,12 @@
 
         <!-- Manage Text -->
         <div *ngIf="activeMenu === 'manage-text'">
-            <h2>Manage Text</h2>
+            <h2>Header text</h2>
+            <h3>Current text:</h3>
+            <input [(ngModel)]="newText" placeholder="Enter new text" />
+            <button (click)="updateText()">Update Managed Component</button>
+            <h3>{{currentvalue}}</h3>
+            
             <textarea class="form-control" rows="5" placeholder="Edit website text here..."></textarea>
             <button class="btn btn-success mt-2">Save</button>
         </div>
