@@ -10,23 +10,23 @@ export class AboutPageComponent {
     {
       icon: '🤝',
       title: 'Cunoasterea autentica',
-      objective: 'Te ascultăm cu atenţie pentru a înțelede cine eşti, ce cauți şi ce ai învătat din experientele tale. Emoțiile, valorile si dorințele tale sunt baza căutării. ',
+      objective: 'Ne intalnim si stam de vorba sau interview telefonic/video daca te afli la distanta.Te ascultăm cu atenţie pentru a înțelege cine eşti, ce cauți şi ce ai învătat din experientele tale. Emoțiile, valorile si dorințele tale sunt baza căutării. ',
       tasks:''
     },
     {
       icon: '👔',
       title: 'Creearea profilului tau personalizat',
-      objective: 'Stabilim impreuna ce iti doresti cu adevarat.Conturam un profil clar si sincer care reflecta ceea ce cauti intr-un partener. \n Acesta ne va ghida in tot procesul',
+      objective: `Stabilim impreuna ce iti doresti cu adevarat.Conturam un profil clar si sincer care reflecta ceea ce cauti intr-un partener. \n Acesta ne va ghida in tot procesul.`,
     },
     {
       icon: '🔍',
       title: 'Selectia atenta a parteneriilor compatibili',
-      objective: 'Facem o trieree serioasa,nu,"match-uri" intamplatoare.Intervievam cu grija candidati reali,compatibili cu tine.Evaluam aspecte esentiale precum valorile,emotiile,stilul de viata si intentiile.',
+      objective: 'Facem o triere,intervievam cu grija candidatii reali,compatibili cu tine.Evaluam aspecte esentiale precum valorile, emotiile, stilul de viata si intentiile.',
     },
     {
       icon: '🍷',
       title: 'Intalnirea cu persoana potrivita',
-      objective: 'îți prezentăm doar persoane alese cu adevărat pentru tine. Organizăm întôâlniri doar când simțim că există o potrivire reală și autentică, petoate planurile'
+      objective: 'îți prezentăm doar persoane alese cu adevărat pentru tine. Organizăm întâlniri doar când simțim că există o potrivire reală și autentică, pe toate planurile.'
     },
     {
       icon: '📞',
@@ -36,7 +36,7 @@ export class AboutPageComponent {
     {
       icon: '🤝',
       title: 'Evaluare finală şi recomandări personalizate',
-      objective: 'Încheiem cu claritate şi înțelepciune.La finalulprocesului, îţi oferim un rezumat sincerşi util al întregii experiențe, pentru a-ţi fi şi mai uşor în viitor',
+      objective: 'Încheiem cu claritate şi înțelepciune. La finalul procesului, îţi oferim un rezumat sincer util al întregii experiențe, pentru a-ţi fi mai uşor în viitor.',
     }
   ];
 }
