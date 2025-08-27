@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: "subscribe", component: SubscribePageComponent },
   {path:"about",component:AboutPageComponent},
   {path:"login",component:LogInPageComponent},
-  {path:"dashbord",component:DashbordComponent,canActivate:[AuthGurdService]},
+  //  {path:"dashbord",component:DashbordComponent,canActivate:[AuthGurdService]},
+  {path:'dashbord',component:DashbordComponent}
 ];
 
 @NgModule({
