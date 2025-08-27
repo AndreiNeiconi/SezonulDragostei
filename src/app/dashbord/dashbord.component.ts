@@ -12,8 +12,8 @@ export class DashbordComponent implements OnInit {
   activeMenu: string = 'dashboard';
 
   requests = [
-    { id: 1, user: 'Alice', text: 'Update profile' },
-    { id: 2, user: 'Bob', text: 'Password reset' },
+    { id: 1, user: 'Alice', text: 'Request send' },
+    { id: 2, user: 'Bob', text: 'Request send' },
   ];
 
   settings = {
