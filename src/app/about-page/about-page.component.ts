@@ -10,7 +10,7 @@ export class AboutPageComponent {
     {
       icon: '🤝',
       title: 'Cunoasterea autentica',
-      objective: 'Ne intalnim si stam de vorba,fie inr-un interv',
+      objective: 'Te ascultăm cu atenţie pentru a înțelede cine eşti, ce cauți şi ce ai învătat din experientele tale. Emoțiile, valorile si dorințele tale sunt baza căutării. ',
       tasks:''
     },
     {

@@ -3,7 +3,7 @@
 <div class="header text-center position-relative">
     <img src="../../assets/images/background-main.jpg" alt="" class="img-fluid w-100" />
     <div
-        class="position-absolute top-50 start-50 translate-middle text-white p-3 bg-dark bg-opacity-50 rounded qoute-hereo">
+        class="position-absolute top-50 start-50 translate-middle text-white p-3 bg-dark rounded qoute-hereo">
         <h1 class="fs-3 fw-bold">
             <!-- "Viata fara dragoste este ca un copac fara flori sau roade" -Khalil Gibram -->
             {{text}}
@@ -16,9 +16,8 @@
     <div class="row gy-4 align-items-start">
         <!-- Left -->
         <div class="col-md-6">
-            <h4>Despre noi</h4>
             <p>
-                <strong>Sezonul Dragostei</strong> este o agenție de matrimoniale premium care oferă servicii
+                <strong style="margin-left: 30px;">Sezonul Dragostei</strong> este o agenție de matrimoniale premium care oferă servicii
                 personalizate
                 de întâlniri, coaching relațional și consultanță în dragoste pentru persoane de succes care caută
                 parteneri
@@ -34,15 +33,14 @@
         </div>
 
         <!-- Right -->
-        <div class="col-md-6">
+        <div class="col-md-6 d-flex flex-column align-items-start">
             <strong class="d-block mb-2">Pentru cine este Sezonul Dragostei:</strong>
-            <ul class="list-unstyled ps-3">
-                <li>Profesioniștilor, antreprenorilor și liderilor din domenii variate</li>
+            <ul class=" ps-3" style="list-style-type: square;">
                 <li>Persoanelor educate, de succes, care își doresc o relație serioasă</li>
                 <li>Celor care au epuizat aplicațiile de dating și caută un proces autentic</li>
                 <li>Celor dispuși să investească timp și energie în găsirea iubirii potrivite</li>
             </ul>
-            <input class="btn text-white px-3 py-1" style="background-color: #d4af37;" type="button" value="Aplica acum"
+            <input class="btn text-white px-3 py-1 align-self-sm-end" style="background-color: #fbac52;" type="button" value="Aplica acum"
                 routerLink="subscribe">
         </div>
     </div>
@@ -61,8 +59,7 @@
             <li>Întâlniri organizate de noi</li>
             <li>Feedback și ajustare constantă a criteriilor</li>
         </ul>
-        <input routerLink="subscribe" class="btn text-white px-3 py-1" style="background-color: #d4af37;" type="button"
-            value="Obtine o programare" routerLink="subscribe">
+        
     </div>
 
     <div class="mb-5">
@@ -75,8 +72,7 @@
             <li>Sprijin în comunicare, atașament, limite și vulnerabilitate</li>
             <li>Ghidaj în relațiile de cuplu, dar și în perioada de dating</li>
         </ul>
-        <input class="btn text-white px-3 py-1" style="border:3px solid #d4af37;" type="button" value="Inscrie-te"
-            routerLink="subscribe">
+        
     </div>
 
     <div>
@@ -86,20 +82,10 @@
             cadru
             sigur și elegant.
         </p>
+        
     </div>
-    <!-- Quote Section -->
-    <section class="quote-section">
-        <div class="quote">
-            <p class="quote-text">
-                <span class="quote-mark">“</span>
-                <em>
-                    „Poate că nu mai cred în coincidențe.<br />
-                    Poate că vreau mai mult decât promisiuni scrise în două mesaje și uitate a doua zi. Eu vreau
-                    profunzime. Vreau autentic. Și știu că merit asta. Aici începe Sezonul Dragostei. Și poate...
-                    și al tău.“
-                </em>
-            </p>
-        </div>
-    </section>
+    <input routerLink="subscribe" class="btn text-white px-3 py-1" style="background-color: #ffffff; color: #000!important;font-weight: bolder;" type="button"
+            value="Aplica acum" routerLink="subscribe">
+    
 </div>
 <app-footer></app-footer>
