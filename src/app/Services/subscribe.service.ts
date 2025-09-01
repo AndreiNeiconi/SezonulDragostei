@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import {
-  Firestore,
-  collection,
-  addDoc,
-  collectionData,
-} from '@angular/fire/firestore';
+  AngularFirestore,
+  AngularFirestoreCollection,
+} from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 
 export interface Member {
@@ -16,7 +14,7 @@ export interface Member {
   age: number;
   job: string;
   location: string;
-  photoUrl: string; // we'll store the image link here
+  photoUrl: string;
   details: string;
   createdAt: any;
 }
@@ -25,19 +23,17 @@ export interface Member {
   providedIn: 'root',
 })
 export class MemberService {
-  constructor(private firestore: Firestore) {}
+  private membersCollection: AngularFirestoreCollection<Member>;
 
-  // Add member to Firestore
-  addMember(member: Member) {
-    const membersRef = collection(this.firestore, 'members');
-    return addDoc(membersRef, member);
+  constructor(private afs: AngularFirestore) {
+    this.membersCollection = afs.collection<Member>('members');
   }
 
-  // Retrieve all members
+  addMember(member: Member) {
+    return this.membersCollection.add(member);
+  }
+
   getMembers(): Observable<Member[]> {
-    const membersRef = collection(this.firestore, 'members');
-    return collectionData(membersRef, { idField: 'id' }) as Observable<
-      Member[]
-    >;
+    return this.membersCollection.valueChanges({ idField: 'id' });
   }
 }

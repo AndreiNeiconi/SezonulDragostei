@@ -1,85 +1,79 @@
 <app-navbar></app-navbar>
 <div class="container py-5 bg">
     <h3 class="text-center"><strong>Devine membru</strong></h3>
-    <p class="text-center">Te rog sa introduci datele tale personale iar un membru al echipei noastre te va contacta in
-        cel mai scurt timp
-        posibil.</p>
+    <p class="text-center">
+        Te rog sa introduci datele tale personale iar un membru al echipei noastre te va contacta in cel mai scurt timp
+        posibil.
+    </p>
 
     <form (ngSubmit)="submitForm()">
         <div class="row mb-3">
             <div class="col-md-6">
-                <label for="nume" class="form-label"><strong>Nume</strong></label>
-                <input [(ngModel)]="name" name="name" type="text" class="form-control" id="nume"
-                    placeholder="Ex: Popescu">
+                <label class="form-label"><strong>Nume</strong></label>
+                <input [(ngModel)]="name" name="name" type="text" class="form-control" placeholder="Ex: Popescu">
             </div>
             <div class="col-md-6">
-                <label for="prenume" class="form-label"><strong>Prenume</strong></label>
-                <input [(ngModel)]="surname" name="surname" type="text" class="form-control" id="prenume"
-                    placeholder="Ex: Andrei">
+                <label class="form-label"><strong>Prenume</strong></label>
+                <input [(ngModel)]="surname" name="surname" type="text" class="form-control" placeholder="Ex: Andrei">
             </div>
         </div>
 
         <div class="row mb-3">
             <div class="col-md-6">
-                <label for="email" class="form-label"><strong>Email</strong></label>
-                <input [(ngModel)]="email" name="email" type="email" class="form-control" id="email"
+                <label class="form-label"><strong>Email</strong></label>
+                <input [(ngModel)]="email" name="email" type="email" class="form-control"
                     placeholder="Ex: exemplu@email.com">
             </div>
             <div class="col-md-6">
-                <label for="telefon" class="form-label"><strong>Telefon</strong></label>
-                <input [(ngModel)]="phone" name="phone" type="tel" class="form-control" id="telefon"
-                    placeholder="Ex: 07xxxxxxxx">
+                <label class="form-label"><strong>Telefon</strong></label>
+                <input [(ngModel)]="phone" name="phone" type="tel" class="form-control" placeholder="Ex: 07xxxxxxxx">
             </div>
         </div>
 
         <div class="row mb-3">
             <div class="col-md-4">
-                <label for="camp1" class="form-label"><strong>Sex</strong></label>
-                <br>
-                <input [(ngModel)]="sex" type="radio" value="Barbat" name="Barbat" id="male">Barbat
-                <input [(ngModel)]="sex" type="radio" name="Femeie" value="Femeie" id="male">Femeie
-
-
+                <label class="form-label"><strong>Sex</strong></label><br>
+                <input type="radio" [(ngModel)]="sex" name="sex" value="Barbat"> Barbat
+                <input type="radio" [(ngModel)]="sex" name="sex" value="Femeie"> Femeie
             </div>
             <div class="col-md-4">
-                <label for="camp2" class="form-label"><strong>Varsta</strong></label>
-                <input [(ngModel)]="age" name="age" type="number" class="form-control" id="camp2">
+                <label class="form-label"><strong>Varsta</strong></label>
+                <input [(ngModel)]="age" name="age" type="number" class="form-control">
             </div>
             <div class="col-md-4">
-                <label for="camp3" class="form-label"><strong>Ocupatia</strong></label>
-                <input [(ngModel)]="job" name="job" type="text" class="form-control" id="camp3">
+                <label class="form-label"><strong>Ocupatia</strong></label>
+                <input [(ngModel)]="job" name="job" type="text" class="form-control">
             </div>
         </div>
+
         <div class="row mb-3">
             <div class="col-md-4">
-                <label for="camp2" class="form-label my-3"><strong>Localitatea</strong></label>
-                <select [(ngModel)]="location" name="localitatea" id="localitatea">
-                    <option value="Alba iulia">Alba iulia</option>
-                    <option value="Alba iulia">vintu de jos</option>
-                    <option value="Alba iulia">Mihalt</option>
-                    <option value="Alba iulia">Zlatna</option>
-                    <option value="Alba iulia">Barabanti</option>
-                    <option value="Alba iulia">Ciugud</option>
+                <label class="form-label my-3"><strong>Localitatea</strong></label>
+                <select [(ngModel)]="location" name="location" class="form-select">
+                    <option>Alba iulia</option>
+                    <option>Vintu de Jos</option>
+                    <option>Mihalt</option>
+                    <option>Zlatna</option>
+                    <option>Barabanti</option>
+                    <option>Ciugud</option>
                 </select>
             </div>
             <div class="col-md-4">
-                <label for="camp3" class="form-label"><strong>O fotografie cu tine</strong></label>
-                <br>
+                <label class="form-label"><strong>O fotografie cu tine</strong></label><br>
                 <input type="file" (change)="onFileSelected($event)">
-
             </div>
         </div>
+
         <div class="row mb-3">
-            <label for="other"><strong>Cateva lucrui despre tine</strong></label>
-            <input  name="moreDetali" type="text" class="px-3 py-5">
+            <label class="form-label"><strong>Cateva lucruri despre tine</strong></label>
+            <input [(ngModel)]="details" name="details" type="text" class="form-control px-3 py-5">
         </div>
+
         <div>
-            <label for="validation">
-                <input type="checkbox" name="validation" id="validation" required>
-                Am citit si luat la cunostinta <a href="">termenii si condittile</a>
+            <label>
+                <input type="checkbox" required>
+                Am citit si luat la cunostinta <a href="#">termenii si condittile</a>
             </label>
-
-
         </div>
 
         <br>

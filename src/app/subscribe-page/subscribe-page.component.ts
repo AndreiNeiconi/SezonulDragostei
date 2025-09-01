@@ -3,10 +3,8 @@ import { MemberService, Member } from '../Services/subscribe.service';
 
 @Component({
   selector: 'app-member-form',
-  templateUrl: '../subscribe-page/subscribe-page.component.html',
-  styleUrls:['../subscribe-page/subscribe-page.component.scss']
-
-  
+  templateUrl: './subscribe-page.component.html',
+  styleUrls: ['./subscribe-page.component.scss'],
 })
 export class SubscribePageComponent {
   name = '';
@@ -17,7 +15,7 @@ export class SubscribePageComponent {
   age: number | null = null;
   job = '';
   location = '';
-  photoUrl = ''; // we'll store the image link here
+  photoUrl = '';
   details = '';
 
   succes = '';
@@ -25,9 +23,7 @@ export class SubscribePageComponent {
 
   constructor(private memberService: MemberService) {}
 
-  // Handle file input (we'll just take the link for now)
   onFileSelected(event: any) {
-    // For now, just simulate by asking user for a link
     alert(
       'Please paste the photo URL manually in the code or use Firebase Storage later.'
     );
@@ -48,7 +44,7 @@ export class SubscribePageComponent {
       age: this.age || 0,
       job: this.job,
       location: this.location,
-      photoUrl: this.photoUrl || 'https://via.placeholder.com/150', // fallback
+      photoUrl: this.photoUrl || 'https://via.placeholder.com/150',
       details: this.details,
       createdAt: new Date(),
     };
