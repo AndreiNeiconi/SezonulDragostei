@@ -11,7 +11,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { LogInPageComponent } from './log-in-page/log-in-page.component';
 import { FormsModule } from '@angular/forms';
 import { DashbordComponent } from './dashbord/dashbord.component';
-import { TestComponent } from './test/test.component';
+
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import { TestComponent } from './test/test.component';
     AboutPageComponent,
     LogInPageComponent,
     DashbordComponent,
-    TestComponent,
+    
   ],
   imports: [
     BrowserModule,
