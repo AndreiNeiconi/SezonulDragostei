@@ -98,6 +98,10 @@
     font-size: 2rem;
     width: 40vw;
 }
+.header-hearo-section span{
+    padding-left: 150px;
+    
+}
 
 .about {
     display: flex;
@@ -149,24 +153,25 @@
 
     .header-hearo-section>h3 {
         font-size: 2rem;
-        top: 40vh;
+        top: 20vh;
         left: 5vw;
+        width: fit-content;
     }
-    .header-hearo-section h3 span{
-        margin:0;
+    .header-hearo-section span{
+        padding-left:300px;
     }
 }
 
 @media (max-width: 576px) {
     .header-hearo-section>h3 {
         font-size: 2rem;
-        top: 35vh;
+        top: 25vh;
         left: 5vw;
         right: 5vw;
         width: fit-content;
     }
-    .header-hearo-section >span{
-        font-size: 1.5rem;
+    .header-hearo-section span{
+        padding-left: 300px;
     }
     
     .qoute-hereo{
