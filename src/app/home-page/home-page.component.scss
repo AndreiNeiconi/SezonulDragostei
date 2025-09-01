@@ -89,7 +89,7 @@
     background-position: center;
     
 }
-.header-hearo-section>h1{
+.header-hearo-section>h3{
     position: absolute;
     top: 50vh;
     left: 10vw;
@@ -147,7 +147,7 @@
         padding: 5vh 10vw;
     }
 
-    .header>h1 {
+    .header-hearo-section>h3 {
         font-size: 1.5rem;
         top: 40vh;
         left: 5vw;
@@ -155,7 +155,7 @@
 }
 
 @media (max-width: 576px) {
-    .header>h1 {
+    .header-hearo-section>h3 {
         font-size: 0.3rem;
         top: 35vh;
         left: 5vw;
