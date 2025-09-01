@@ -5,6 +5,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 
 import { DashbordComponent } from './dashbord/dashbord.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: "subscribe", component: SubscribePageComponent },
   {path:"about",component:AboutPageComponent},
   //  {path:"dashbord",component:DashbordComponent,canActivate:[AuthGurdService]},
-  {path:'dashbord',component:DashbordComponent}
+  {path:'dashbord',component:DashbordComponent},
+  {path:"contact",component:ContactComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="container" style="padding-top: 13vh; padding-bottom: 10vh;">
+    <h3 class="text-center"><strong>Contactează-ne</strong></h3>
+    <p class="text-center">
+        Pentru întrebări sau informații suplimentare, te rugăm să ne contactezi folosind formularul de mai jos sau prin email.
+    </p>
+    <form (ngSubmit)="submitForm()">
+        <div class="mb-3">
+            <label class="form-label"><strong>Nume complet</strong></label>
+            <input [(ngModel)]="fullName" name="fullName" type="text" class="form-control" placeholder="Ex: Popescu Andrei">
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><strong>Email</strong></label>
+            <input [(ngModel)]="email" name="email" type="email" class="form-control" placeholder="Ex:">
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><strong>Subiect</strong></label>
+            <input [(ngModel)]="subject" name="subject" type="text" class="form-control" placeholder="Ex: Întrebare despre serviciile voastre">
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><strong>Mesaj</strong></label>
+            <textarea [(ngModel)]="message" name="message" class="form-control" rows="5" placeholder="Scrie mesajul tău aici..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Trimite</button>
+    </form>
+</div>      
