@@ -148,20 +148,27 @@
     }
 
     .header-hearo-section>h3 {
-        font-size: 1.5rem;
+        font-size: 2rem;
         top: 40vh;
         left: 5vw;
+    }
+    .header-hearo-section h3 span{
+        margin:0;
     }
 }
 
 @media (max-width: 576px) {
     .header-hearo-section>h3 {
-        font-size: 0.3rem;
+        font-size: 2rem;
         top: 35vh;
         left: 5vw;
         right: 5vw;
-        width: 100%;
+        width: fit-content;
     }
+    .header-hearo-section >span{
+        font-size: 1.5rem;
+    }
+    
     .qoute-hereo{
         width: 100vw;
     }

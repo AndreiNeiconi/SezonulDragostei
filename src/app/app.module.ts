@@ -13,12 +13,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 
 import { DashbordComponent } from './dashbord/dashbord.component';
 
-// import {AngularFireModule} from '@angular/fire/compat';
-// import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-// import { environment } from '../envoierments/environment';   
-// import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-// import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-// import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +30,6 @@ import { DashbordComponent } from './dashbord/dashbord.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-
     
 
 
