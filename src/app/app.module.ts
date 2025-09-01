@@ -10,7 +10,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { SubscribePageComponent } from './subscribe-page/subscribe-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutPageComponent } from './about-page/about-page.component';
-import { LogInPageComponent } from './log-in-page/log-in-page.component';
+
 import { DashbordComponent } from './dashbord/dashbord.component';
 
 import { AngularFireModule } from '@angular/fire/compat';
@@ -25,7 +25,6 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     SubscribePageComponent,
     FooterComponent,
     AboutPageComponent,
-    LogInPageComponent,
     DashbordComponent,
   ],
   imports: [
