@@ -13,19 +13,15 @@ import { AboutPageComponent } from './about-page/about-page.component';
 
 import { DashbordComponent } from './dashbord/dashbord.component';
 
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomePageComponent,
-    SubscribePageComponent,
     FooterComponent,
     AboutPageComponent,
     DashbordComponent,
+    SubscribePageComponent
   ],
   imports: [
     BrowserModule,
