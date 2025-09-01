@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { SubscribeService } from '../Services/subscribe.service';
+import { MemberService, Member } from '../Services/subscribe.service';
 
 @Component({
-  selector: 'app-subscribe-page',
-  templateUrl: './subscribe-page.component.html',
-  styleUrls: ['./subscribe-page.component.scss'],
+  selector: 'app-member-form',
+  templateUrl: '../subscribe-page/subscribe-page.component.html',
+  styleUrls:['../subscribe-page/subscribe-page.component.scss']
+
+  
 })
 export class SubscribePageComponent {
   name = '';
@@ -12,49 +14,68 @@ export class SubscribePageComponent {
   email = '';
   phone = '';
   sex = '';
-  age = '';
+  age: number | null = null;
   job = '';
-  avalabilityDate = '';
   location = '';
-  photo = '';
-  moreDetali = '';
+  photoUrl = ''; // we'll store the image link here
+  details = '';
+
   succes = '';
-  selectedFile ='';
   error = '';
-  constructor(private SubscribeService: SubscribeService) {}
+
+  constructor(private memberService: MemberService) {}
+
+  // Handle file input (we'll just take the link for now)
+  onFileSelected(event: any) {
+    // For now, just simulate by asking user for a link
+    alert(
+      'Please paste the photo URL manually in the code or use Firebase Storage later.'
+    );
+  }
 
   submitForm() {
-    const formData = new FormData();
+    if (!this.name || !this.surname || !this.email) {
+      this.error = 'Toate campurile obligatorii trebuie completate!';
+      return;
+    }
 
-    formData.append('last_name', this.name);
-    formData.append('first_name', this.surname);
-    formData.append('email', this.email);
-    formData.append('phone', this.phone);
-    formData.append('gender', this.sex);
-    formData.append('age', this.age);
-    formData.append('occupation', this.job);
-    formData.append('available_from', this.avalabilityDate);
-    formData.append('available_to', this.avalabilityDate); // if you want both same
-    formData.append('location', this.location);
-    formData.append('about', this.moreDetali);
-    formData.append('accepted_terms', 'true');
-    formData.append('photo', this.selectedFile); // handled separately
+    const member: Member = {
+      name: this.name,
+      surname: this.surname,
+      email: this.email,
+      phone: this.phone,
+      sex: this.sex,
+      age: this.age || 0,
+      job: this.job,
+      location: this.location,
+      photoUrl: this.photoUrl || 'https://via.placeholder.com/150', // fallback
+      details: this.details,
+      createdAt: new Date(),
+    };
 
-    this.SubscribeService.SubscribeForm(formData).subscribe({
-      next: (res) => {
-        this.succes = 'Message sent!';
+    this.memberService
+      .addMember(member)
+      .then(() => {
+        this.succes = 'Datele au fost trimise cu succes!';
         this.error = '';
-      },
-      error: () => {
-        this.error = 'Failed to send message.';
+        this.resetForm();
+      })
+      .catch((err) => {
+        this.error = 'Eroare la salvare: ' + err.message;
         this.succes = '';
-      },
-    });
+      });
   }
 
-  // Capture file input
-  onFileSelected(event: any) {
-    this.selectedFile = event.target.files[0];
+  resetForm() {
+    this.name = '';
+    this.surname = '';
+    this.email = '';
+    this.phone = '';
+    this.sex = '';
+    this.age = null;
+    this.job = '';
+    this.location = '';
+    this.photoUrl = '';
+    this.details = '';
   }
 }
-

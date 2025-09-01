@@ -13,6 +13,17 @@ import { FormsModule } from '@angular/forms';
 import { DashbordComponent } from './dashbord/dashbord.component';
 
 
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
+
+
 
 @NgModule({
   declarations: [
@@ -24,15 +35,28 @@ import { DashbordComponent } from './dashbord/dashbord.component';
     AboutPageComponent,
     LogInPageComponent,
     DashbordComponent,
-    
   ],
   imports: [
+    AngularFireModule.initializeApp({
+      apiKey: 'AIzaSyAQsC8J0Fd7FI5IbDNeEAcNa6y8fJtVc-U',
+      authDomain: 'sezonul-dragostei-854b6.firebaseapp.com',
+      databaseURL:
+        'https://sezonul-dragostei-854b6-default-rtdb.europe-west1.firebasedatabase.app',
+      projectId: 'sezonul-dragostei-854b6',
+      storageBucket: 'sezonul-dragostei-854b6.firebasestorage.app',
+      messagingSenderId: '1068303148229',
+      appId: '1:1068303148229:web:4fa8d70a97807955127cac',
+      measurementId: 'G-0XDKG111E1',
+    }),
+
+
+
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

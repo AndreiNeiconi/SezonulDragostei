@@ -18,7 +18,7 @@ exports.handler = async (event, context) => {
             body: JSON.stringify({ time: res.rows[0].now }),
         };
     } catch (error) {
-        console.error(err);
+        console.error(error);
         return {
             statusCode: 500,
             body: JSON.stringify({ error: 'Database error' })
