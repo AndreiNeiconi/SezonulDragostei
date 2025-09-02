@@ -7,6 +7,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { ContactComponent } from './contact/contact.component';
 import { PoliticaDeConfidentialitateComponent } from './politica-de-confidentialitate/politica-de-confidentialitate.component';
+import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -16,7 +17,7 @@ const routes: Routes = [
   { path: 'dashbord', component: DashbordComponent },
   { path: 'contact', component: ContactComponent },
   {path:'politica',component:PoliticaDeConfidentialitateComponent},
-  {path:'term-of-use',component:PoliticaDeConfidentialitateComponent}
+  {path:'term-of-use',component:TermsOfUseComponent}
 ];
 
 @NgModule({
