@@ -1,0 +1,60 @@
+<div class="container">
+    <h1>Termeni și Condiții de Utilizare</h1>
+
+    <!-- Short summary -->
+    <div class="short-terms">
+        <h2>Pe scurt</h2>
+        <p>
+            Ne selectăm clientela și ne rezervăm dreptul de a accepta sau respinge conturi.
+        </p>
+        <p>
+            Ești responsabil pentru corectitudinea datelor pe care le introduci. Introducerea de date false
+            sau ale altor persoane, în scop de amuzament, hărțuire sau furt de identitate, este strict interzisă.
+        </p>
+    </div>
+
+    <!-- Toggle button -->
+    <button (click)="toggleTerms()">
+        {{ showFullTerms ? 'Ascunde termenii compleți' : 'Vezi termenii compleți' }}
+    </button>
+
+    <!-- Full terms -->
+    <div class="full-terms" *ngIf="showFullTerms">
+        <h2>1. Selectarea clientelei</h2>
+        <p>
+            Platforma își rezervă dreptul de a selecta utilizatorii acceptați. Nu toate solicitările
+            de cont vor fi aprobate.
+        </p>
+
+        <h2>2. Responsabilitatea utilizatorului</h2>
+        <p>
+            Utilizatorii sunt responsabili pentru introducerea corectă și veridică a datelor personale
+            în formularul de înregistrare.
+        </p>
+
+        <h2>3. Interdicții</h2>
+        <ul>
+            <li>Introducerea de date false sau inexacte.</li>
+            <li>Introducerea datelor altor persoane în scop de amuzament.</li>
+            <li>Hărțuirea altor utilizatori prin informații incorecte.</li>
+            <li>Furtul de identitate sau orice utilizare neautorizată a datelor altor persoane.</li>
+        </ul>
+
+        <h2>4. Sancțiuni</h2>
+        <p>
+            Încălcarea acestor reguli poate duce la suspendarea sau ștergerea contului și, dacă este cazul,
+            la acțiuni legale împotriva utilizatorului.
+        </p>
+
+        <h2>5. Modificarea termenilor</h2>
+        <p>
+            Ne rezervăm dreptul de a modifica acești termeni în orice moment. Orice modificare va fi
+            afișată pe această pagină, împreună cu data ultimei revizuiri.
+        </p>
+
+        <h2>6. Contact</h2>
+        <p>
+            Pentru întrebări sau clarificări, ne puteți contacta la: [adresa email] sau [număr de telefon].
+        </p>
+    </div>
+</div>

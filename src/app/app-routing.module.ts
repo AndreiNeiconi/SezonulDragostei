@@ -15,7 +15,8 @@ const routes: Routes = [
   //  {path:"dashbord",component:DashbordComponent,canActivate:[AuthGurdService]},
   { path: 'dashbord', component: DashbordComponent },
   { path: 'contact', component: ContactComponent },
-  {path:'politica',component:PoliticaDeConfidentialitateComponent}
+  {path:'politica',component:PoliticaDeConfidentialitateComponent},
+  {path:'temeni',component:PoliticaDeConfidentialitateComponent}
 ];
 
 @NgModule({

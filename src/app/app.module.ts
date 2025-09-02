@@ -14,6 +14,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { ContactComponent } from './contact/contact.component';
 import { PoliticaDeConfidentialitateComponent } from './politica-de-confidentialitate/politica-de-confidentialitate.component';
+import { TermsOfUseComponent } from './terms-of-use/terms-of-use.component';
 
 
 
@@ -27,7 +28,8 @@ import { PoliticaDeConfidentialitateComponent } from './politica-de-confidential
     DashbordComponent,
     SubscribePageComponent,
     ContactComponent,
-    PoliticaDeConfidentialitateComponent
+    PoliticaDeConfidentialitateComponent,
+    TermsOfUseComponent
   ],
   imports: [
     BrowserModule,
