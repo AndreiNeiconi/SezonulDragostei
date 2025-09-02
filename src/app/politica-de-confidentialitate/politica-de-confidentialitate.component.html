@@ -1,0 +1,95 @@
+<div class="container">
+    <h1>Politica de Confidențialitate</h1>
+
+    <!-- Short Policy -->
+    <div class="short-policy">
+        <h2>Pe scurt</h2>
+        <p>
+            Colectăm doar datele necesare pentru a folosi site-ul: nume, email, telefon,
+            poze, oraș, vârsta, sexul, locul de muncă și o scurtă descriere personală.
+        </p>
+        <p>
+            Datele tale nu sunt publice și sunt păstrate în siguranță. Le folosim doar
+            pentru a facilita potrivirile, a îmbunătăți site-ul și a comunica legat de contul tău.
+        </p>
+        <p>
+            Nu vindem sau partajăm datele tale cu terți, cu excepția situațiilor impuse de lege.
+            Poți să-ți ștergi contul sau să modifici datele în orice moment.
+        </p>
+    </div>
+
+    <!-- Toggle Button -->
+    <button (click)="togglePolicy()">
+        {{ showFullPolicy ? 'Ascunde versiunea completă' : 'Vezi versiunea completă' }}
+    </button>
+
+    <!-- Full Policy -->
+    <div class="full-policy" *ngIf="showFullPolicy">
+        <h2>1. Datele colectate</h2>
+        <ul>
+            <li>Nume și prenume</li>
+            <li>Număr de telefon</li>
+            <li>Adresă de e-mail</li>
+            <li>Poze încărcate</li>
+            <li>Oraș sau localitate</li>
+            <li>Locul de muncă (opțional)</li>
+            <li>Scurtă descriere personală</li>
+            <li>Sexul</li>
+            <li>Vârsta</li>
+        </ul>
+
+        <h2>2. Scopul prelucrării datelor</h2>
+        <p>
+            Datele sunt utilizate pentru crearea contului, facilitarea interacțiunii între
+            utilizatori, asigurarea funcționării și securității platformei, comunicări
+            administrative și îmbunătățirea experienței utilizatorului.
+        </p>
+
+        <h2>3. Stocarea și securitatea datelor</h2>
+        <p>
+            Datele sunt stocate în baze de date securizate. Implementăm măsuri tehnice și
+            organizatorice pentru protecție împotriva accesului neautorizat, pierderii sau
+            distrugerii. Accesul la date este limitat strict la personalul autorizat.
+        </p>
+
+        <h2>4. Dezvăluirea datelor către terți</h2>
+        <p>
+            Nu vindem, nu închiriem și nu transferăm datele personale către terți, cu
+            excepția situațiilor în care avem consimțământul explicit al utilizatorului,
+            suntem obligați prin lege sau pentru apărarea drepturilor și securității noastre.
+        </p>
+
+        <h2>5. Drepturile utilizatorilor</h2>
+        <ul>
+            <li>Dreptul de acces</li>
+            <li>Dreptul la rectificare</li>
+            <li>Dreptul la ștergere („dreptul de a fi uitat”)</li>
+            <li>Dreptul la restricționarea prelucrării</li>
+            <li>Dreptul la portabilitatea datelor</li>
+            <li>Dreptul de opoziție</li>
+        </ul>
+        <p>Contact pentru exercitarea drepturilor: [adresa email]</p>
+
+        <h2>6. Păstrarea datelor</h2>
+        <p>
+            Datele sunt păstrate atât timp cât contul este activ. La ștergerea contului,
+            datele sunt eliminate în maxim 30 de zile, cu excepția cazurilor impuse de lege.
+        </p>
+
+        <h2>7. Cookie-uri și tehnologii similare</h2>
+        <p>
+            Folosim cookie-uri pentru funcționarea corectă a platformei, analiza traficului
+            și personalizarea experienței utilizatorului.
+        </p>
+
+        <h2>8. Modificări ale politicii</h2>
+        <p>
+            Ne rezervăm dreptul de a modifica această politică. Orice actualizare va fi
+            publicată pe această pagină, cu mențiunea datei ultimei revizuiri.
+        </p>
+
+        <h2>9. Contact</h2>
+        <p>📧 contact@serviciidematrimoniale.ro</p>
+
+    </div>
+</div>

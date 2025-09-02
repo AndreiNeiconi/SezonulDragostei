@@ -6,6 +6,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { ContactComponent } from './contact/contact.component';
+import { PoliticaDeConfidentialitateComponent } from './politica-de-confidentialitate/politica-de-confidentialitate.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   //  {path:"dashbord",component:DashbordComponent,canActivate:[AuthGurdService]},
   { path: 'dashbord', component: DashbordComponent },
   { path: 'contact', component: ContactComponent },
+  {path:'politica',component:PoliticaDeConfidentialitateComponent}
 ];
 
 @NgModule({
