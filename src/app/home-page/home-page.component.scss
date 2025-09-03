@@ -170,7 +170,7 @@
         width: fit-content;
     }
     .header-hearo-section span{
-        padding-left: 300px;
+        padding-left: 200px;
     }
     
     .qoute-hereo{
@@ -189,5 +189,11 @@
     .about .right,
     .about .left {
         width: 90vw;
+    }
+    @media (max-width:480px) {
+        .header-hearo-section span{
+            padding-left: 0;
+        }
+        
     }
 }
