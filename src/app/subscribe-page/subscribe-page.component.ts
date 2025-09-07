@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../Services/api.service';
 
 
 @Component({
@@ -8,32 +9,63 @@ import { Component } from '@angular/core';
 })
 export class SubscribePageComponent {
   name = '';
-  surname = '';
   email = '';
-  phone = '';
-  sex = '';
-  age: number | null = null;
-  job = '';
-  location = '';
-  photoUrl = '';
-  details = '';
+  message = '';
+  resposneMessage: string | null = null;
 
-  succes = '';
-  error = '';
+  constructor(private apiService:ApiService){}
 
-
-  onFileSelected(event: any) {
-    alert(
-      'Please paste the photo URL manually in the code or use Firebase Storage later.'
-    );
-  }
-
-  submitForm() {
-    if (!this.name || !this.surname || !this.email) {
-      this.error = 'Toate campurile obligatorii trebuie completate!';
-      return;
-    }
-
+  onSubmit() {
+    const formData = {
+      name: this.name,
+      email: this.email,
+      message: this.message,
+    };
+    this.apiService.submitForm(formData).subscribe({
+      next: () => {
+        this.resposneMessage = "Form sumited succesfuly!";
+        this.name = '';
+        this.email = '';
+        this.message = '';
+        
+      },
+      error: () => {
+        this.resposneMessage = "Error sumiting form!";
+      }
+    })
   }
 
 }
+
+
+
+  // name = '';
+  // surname = '';
+  // email = '';
+  // phone = '';
+  // sex = '';
+  // age: number | null = null;
+  // job = '';
+  // location = '';
+  // photoUrl = '';
+  // details = '';
+
+  // succes = '';
+  // error = '';
+
+
+  // onFileSelected(event: any) {
+  //   alert(
+  //     'Please paste the photo URL manually in the code or use Firebase Storage later.'
+  //   );
+  // }
+
+  // submitForm() {
+  //   if (!this.name || !this.surname || !this.email) {
+  //     this.error = 'Toate campurile obligatorii trebuie completate!';
+  //     return;
+  //   }
+
+  // }
+
+

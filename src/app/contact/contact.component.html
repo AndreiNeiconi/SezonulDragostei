@@ -4,10 +4,10 @@
     <p class="text-center">
         Pentru întrebări sau informații suplimentare, te rugăm să ne contactezi folosind formularul de mai jos sau prin email.
     </p>
-    <form (ngSubmit)="submitForm()">
+    <form (ngSubmit)="onSubmit()">
         <div class="mb-3">
             <label class="form-label"><strong>Nume complet</strong></label>
-            <input [(ngModel)]="fullName" name="fullName" type="text" class="form-control" placeholder="Ex: Popescu Andrei">
+            <input [(ngModel)]="name" name="name" type="text" class="form-control" placeholder="Ex: Popescu Andrei">
         </div>
         <div class="mb-3">
             <label class="form-label"><strong>Email</strong></label>
@@ -23,4 +23,25 @@
         </div>
         <button type="submit" class="btn btn-primary">Trimite</button>
     </form>
+    <p *ngIf="resposneMessage">{{ resposneMessage }}</p>
 </div>      
+<!-- <form (ngSubmit)="onSubmit()">
+    <div>
+        <label>Name:</label>
+        <input [(ngModel)]="name" name="name" required />
+    </div>
+
+    <div>
+        <label>Email:</label>
+        <input [(ngModel)]="email" name="email" required />
+    </div>
+
+    <div>
+        <label>Message:</label>
+        <textarea [(ngModel)]="message" name="message"></textarea>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+
+<p *ngIf="resposneMessage">{{ resposneMessage }}</p> -->

@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<!-- <app-navbar></app-navbar>
 <div class="container " style="padding-top: 13vh;">
     <h3 class="text-center"><strong>Devino membru</strong></h3>
     <p class="text-center">
@@ -81,4 +81,24 @@
         <p *ngIf="succes" style="color: green;">{{succes}}</p>
         <p *ngIf="error" style="color: red;">{{error}}</p>
     </form>
-</div>
+</div> -->
+
+<app-navbar></app-navbar>
+<form (ngSubmit)="onSubmit()">
+    <div>
+        <label for="">Name:</label>
+        <input [(ngModel)]="name" name="name" required>
+    </div>
+
+    <div>
+        <label for="">Email:</label>
+        <input [(ngModel)]="name" name="name" required>
+    </div>
+
+    <div>
+        <label for="">Message:</label>
+        <input [(ngModel)]="name" name="name" required>
+    </div>
+
+
+</form>
