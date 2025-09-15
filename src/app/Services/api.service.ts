@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'https://serviciidematrimoniale.ro/api/contact';
+  private apiUrl = 'http://serviciidematrimoniale.ro/api/contact';
 
   constructor(private http: HttpClient) {}
 
