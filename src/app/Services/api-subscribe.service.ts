@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiSubscribeService {
-  private apiUrl = 'http://72.60.37.45:8080/subscribe'; // backend endpoint
+  private apiUrl = 'http://72.60.37.45:5000/subscribe'; // backend endpoint
 
   constructor(private http: HttpClient) {}
 
