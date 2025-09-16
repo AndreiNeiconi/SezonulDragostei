@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class ApiSubscribeService {
   // ✅ use domain with HTTPS
-  private apiUrl = 'https://serviciidematrimoniale.ro/api/subscribe';
+  // private apiUrl = 'https://serviciidematrimoniale.ro/api/subscribe';
+  private apiUrl = 'http://localhost:6060/api/subscribe';
 
   constructor(private http: HttpClient) {}
 

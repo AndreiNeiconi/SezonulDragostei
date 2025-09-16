@@ -7,8 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'https://serviciidematrimoniale.ro/contact';
-
+  private apiUrl = 'https://serviciidematrimoniale.ro/api/contact';  
   constructor(private http: HttpClient) {}
 
   submitForm(data: any): Observable<any> {
