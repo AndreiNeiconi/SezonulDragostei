@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../Services/api.service';
 import { ApiSubscribeService } from '../Services/api-subscribe.service';
-
 
 @Component({
   selector: 'app-member-form',
@@ -9,7 +7,6 @@ import { ApiSubscribeService } from '../Services/api-subscribe.service';
   styleUrls: ['./subscribe-page.component.scss'],
 })
 export class SubscribePageComponent {
-
   name = '';
   surname = '';
   email = '';
@@ -20,6 +17,7 @@ export class SubscribePageComponent {
   location = '';
   details = '';
   file: File | null = null;
+  acceptTerms = false; // ✅ track checkbox state
 
   succes: string | null = null;
   error: string | null = null;
@@ -30,7 +28,15 @@ export class SubscribePageComponent {
     this.file = event.target.files[0];
   }
 
-  submitForm() {
+  submitForm(form: any) {
+    if (form.invalid || !this.acceptTerms) {
+      // Mark all fields as touched so errors appear
+      Object.keys(form.controls).forEach((key) => {
+        form.controls[key].markAsTouched();
+      });
+      return;
+    }
+
     const formData = new FormData();
     formData.append('name', this.name);
     formData.append('surname', this.surname);
@@ -44,15 +50,16 @@ export class SubscribePageComponent {
     if (this.file) {
       formData.append('file', this.file, this.file.name);
     }
+    formData.append('acceptTerms', this.acceptTerms.toString());
 
     this.apiService.submitForm(formData).subscribe({
-      next: (res) => {
-        this.succes = 'Form submitted successfully!';
+      next: () => {
+        this.succes = 'Formular trimis cu succes!';
         this.error = null;
         this.resetForm();
       },
       error: (err) => {
-        this.error = 'Error submitting form!';
+        this.error = 'Eroare la trimiterea formularului!';
         this.succes = null;
         console.error(err);
       },
@@ -70,5 +77,6 @@ export class SubscribePageComponent {
     this.location = '';
     this.details = '';
     this.file = null;
+    this.acceptTerms = false;
   }
 }

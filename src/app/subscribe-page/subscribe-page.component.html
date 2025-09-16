@@ -1,85 +1,117 @@
 <app-navbar></app-navbar>
-<div class="container " style="padding-top: 13vh;">
+<div class="container" style="padding-top: 13vh;">
     <h3 class="text-center"><strong>Devino membru</strong></h3>
     <p class="text-center">
         Te rog sa introduci datele tale personale iar un membru al echipei noastre te va contacta in cel mai scurt timp
         posibil.
     </p>
 
-    <form (ngSubmit)="submitForm()" name="contact" method="POST" data-netlify="true">
+    <form #memberForm="ngForm" (ngSubmit)="submitForm(memberForm)" novalidate>
+        <!-- Nume + Prenume -->
         <div class="row mb-3">
             <div class="col-md-6">
                 <label class="form-label"><strong>Nume</strong></label>
-                <input [(ngModel)]="name" name="name" type="text" class="form-control" placeholder="Ex: Popescu">
+                <input [(ngModel)]="name" name="name" type="text" class="form-control" placeholder="Ex: Popescu"
+                    required #nameRef="ngModel" [ngClass]="{'is-invalid': nameRef.invalid && nameRef.touched}">
+                <div class="invalid-feedback">Acest câmp este obligatoriu.</div>
             </div>
+
             <div class="col-md-6">
                 <label class="form-label"><strong>Prenume</strong></label>
-                <input [(ngModel)]="surname" name="surname" type="text" class="form-control" placeholder="Ex: Andrei">
+                <input [(ngModel)]="surname" name="surname" type="text" class="form-control" placeholder="Ex: Andrei"
+                    required #surnameRef="ngModel" [ngClass]="{'is-invalid': surnameRef.invalid && surnameRef.touched}">
+                <div class="invalid-feedback">Acest câmp este obligatoriu.</div>
             </div>
         </div>
 
+        <!-- Email + Telefon -->
         <div class="row mb-3">
             <div class="col-md-6">
                 <label class="form-label"><strong>Email</strong></label>
                 <input [(ngModel)]="email" name="email" type="email" class="form-control"
-                    placeholder="Ex: exemplu@email.com">
+                    placeholder="Ex: exemplu@email.com" required email #emailRef="ngModel"
+                    [ngClass]="{'is-invalid': emailRef.invalid && emailRef.touched}">
+                <div class="invalid-feedback">Introduceți o adresă validă de email.</div>
             </div>
+
             <div class="col-md-6">
                 <label class="form-label"><strong>Telefon</strong></label>
-                <input [(ngModel)]="phone" name="phone" type="tel" class="form-control" placeholder="Ex: 07xxxxxxxx">
+                <input [(ngModel)]="phone" name="phone" type="tel" class="form-control" placeholder="Ex: 07xxxxxxxx"
+                    required pattern="^0[0-9]{9}$" #phoneRef="ngModel"
+                    [ngClass]="{'is-invalid': phoneRef.invalid && phoneRef.touched}">
+                <div class="invalid-feedback">Introduceți un număr valid (10 cifre, ex: 07xxxxxxxx).</div>
             </div>
         </div>
 
+        <!-- Sex, Varsta, Job -->
         <div class="row mb-3">
             <div class="col-md-4">
                 <label class="form-label"><strong>Sex</strong></label><br>
-                <input type="radio" [(ngModel)]="sex" name="sex" value="Barbat"> Barbat
-                <input type="radio" [(ngModel)]="sex" name="sex" value="Femeie"> Femeie
+                <input type="radio" [(ngModel)]="sex" name="sex" value="Barbat" required #sexRef="ngModel"> Bărbat
+                <input type="radio" [(ngModel)]="sex" name="sex" value="Femeie" required> Femeie
+                <div class="text-danger" *ngIf="sexRef.invalid && sexRef.touched">Selectați o opțiune.</div>
             </div>
+
             <div class="col-md-4">
-                <label class="form-label"><strong>Varsta</strong></label>
-                <input [(ngModel)]="age" name="age" type="number" class="form-control">
+                <label class="form-label"><strong>Vârsta</strong></label>
+                <input [(ngModel)]="age" name="age" type="number" class="form-control" required min="16" max="100"
+                    #ageRef="ngModel" [ngClass]="{'is-invalid': ageRef.invalid && ageRef.touched}">
+                <div class="invalid-feedback">Introduceți o vârstă între 16 și 100.</div>
             </div>
+
             <div class="col-md-4">
-                <label class="form-label"><strong>Ocupatia</strong></label>
-                <input [(ngModel)]="job" name="job" type="text" class="form-control">
+                <label class="form-label"><strong>Ocupația</strong></label>
+                <input [(ngModel)]="job" name="job" type="text" class="form-control" required #jobRef="ngModel"
+                    [ngClass]="{'is-invalid': jobRef.invalid && jobRef.touched}">
+                <div class="invalid-feedback">Acest câmp este obligatoriu.</div>
             </div>
         </div>
 
+        <!-- Localitate + Foto -->
         <div class="row mb-3">
             <div class="col-md-4">
-                <label class="form-label my-3"><strong>Localitatea</strong></label>
-                <select [(ngModel)]="location" name="location" class="form-select">
-                    <option>Alba iulia</option>
+                <label class="form-label"><strong>Localitatea</strong></label>
+                <select [(ngModel)]="location" name="location" class="form-select" required #locRef="ngModel"
+                    [ngClass]="{'is-invalid': locRef.invalid && locRef.touched}">
+                    <option value="" disabled selected>Selectează...</option>
+                    <option>Alba Iulia</option>
                     <option>Vintu de Jos</option>
                     <option>Mihalt</option>
                     <option>Zlatna</option>
                     <option>Barabanti</option>
                     <option>Ciugud</option>
                 </select>
+                <div class="invalid-feedback">Selectați o localitate.</div>
             </div>
-            <div class="col-md-4 " style="padding-top:30px;">
+
+            <div class="col-md-4">
                 <label class="form-label"><strong>O fotografie cu tine</strong></label><br>
-                <input type="file" (change)="onFileSelected($event)">
+                <input type="file" (change)="onFileSelected($event)" required>
             </div>
         </div>
 
+        <!-- Detalii -->
         <div class="row mb-3">
-            <label class="form-label"><strong>Cateva lucruri despre tine</strong></label>
-            <input [(ngModel)]="details" name="details" type="text" class="form-control px-3 py-5">
+            <label class="form-label"><strong>Câteva lucruri despre tine</strong></label>
+            <input [(ngModel)]="details" name="details" type="text" class="form-control px-3 py-5" required
+                #detailsRef="ngModel" [ngClass]="{'is-invalid': detailsRef.invalid && detailsRef.touched}">
+            <div class="invalid-feedback">Acest câmp este obligatoriu.</div>
         </div>
 
-        <div>
+        <!-- T&C -->
+        <div class="mb-3">
             <label>
-                <input type="checkbox" required>
-                Am citit si luat la cunostinta <a href="#">termenii si condittile</a>
+                <input type="checkbox" [(ngModel)]="acceptTerms" name="acceptTerms" required #termsRef="ngModel">
+                Am citit și sunt de acord cu <a href="#">termenii și condițiile</a>
             </label>
+            <div class="text-danger" *ngIf="termsRef.invalid && termsRef.touched">
+                Trebuie să accepți termenii și condițiile.
+            </div>
         </div>
 
-        <br>
-        <button type="submit" class="btn btn-primary">Trimite</button>
-        <p *ngIf="succes" style="color: green;">{{succes}}</p>
-        <p *ngIf="error" style="color: red;">{{error}}</p>
+        <button type="submit" class="btn btn-primary" [disabled]="memberForm.invalid">Trimite</button>
+
+        <p *ngIf="succes" class="text-success mt-2">{{succes}}</p>
+        <p *ngIf="error" class="text-danger mt-2">{{error}}</p>
     </form>
 </div>
-
