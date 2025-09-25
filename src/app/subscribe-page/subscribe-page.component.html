@@ -102,7 +102,7 @@
         <div class="mb-3">
             <label>
                 <input type="checkbox" [(ngModel)]="acceptTerms" name="acceptTerms" required #termsRef="ngModel">
-                Am citit și sunt de acord cu <a href="#">termenii și condițiile</a>
+                Am citit și sunt de acord cu <a routerLink="/term-of-use">termenii și condițiile</a>
             </label>
             <div class="text-danger" *ngIf="termsRef.invalid && termsRef.touched">
                 <a routerLink="/term-of-use">Trebuie să accepți termenii și condițiile.</a>
