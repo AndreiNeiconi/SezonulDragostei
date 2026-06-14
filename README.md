@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# SezonulDragostei
-=======
-=======
->>>>>>> 4f824ccd6b0d2f228ee53f9162073ee4b5ec95f2
-# SezonulDragostei
+##Sezonul Dragostei
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
 
